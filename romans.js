@@ -162,15 +162,15 @@ function init() {
 
   function lessThan9(num, obj) {
     if (num === 9) {
-      return obj[1] + obj[10];
+        return obj[1] + obj[10];
     } else if (num >= 5 && num < 9) {
-      return obj[5] + obj[1].repeat(num % 5);
+        return obj[5] + obj[1].repeat(num - 5);
     } else if (num === 4) {
-      return obj[1] + obj[5];
+        return obj[1] + obj[5];
     } else {
-      return (obj[1]).repeat(num);
+        return obj[1].repeat(num);
     }
-  };
+}
 
   function greaterThan9(num, obj) {
     if (num >= 10 && num < 50) {
