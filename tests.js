@@ -1,7 +1,7 @@
-test("Roman Numeral Converter", function(assert) {
+QUnit.test("Roman Numeral Converter", function(assert) {
   
   // Testing valid roman to integer conversions
-  assert.propEqual(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
+  QUnit.assert.propEqual(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
   assert.propEqual(convertRomanToInteger("MDCL"), {value: 1650, message: '', result: true}, "TC-2: Convert 'MDCL' to 1650");
   assert.propEqual(convertRomanToInteger("DCCCLXXVIII"), {value: 878, message: '', result: true}, "TC-3: Convert 'DCCCLXXVIII' to 878");
   assert.propEqual(convertRomanToInteger("XLV"), {value: 45, message: '', result: true}, "TC-4: Convert 'XLV' to 45");
