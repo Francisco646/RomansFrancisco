@@ -234,6 +234,11 @@ function init() {
         return obj[1000];
       }
 
-      return obj[1000].repeat(parseInt(num / 1000));
+      result = '';
+      for (i = 0; i < parseInt(num / 1000); i++) {
+        result += obj[1000];
+      }
+      return result;
+}
     }
   };
