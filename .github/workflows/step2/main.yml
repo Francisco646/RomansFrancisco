@@ -21,15 +21,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - name: Set-up Node
+        uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 10.x
 
       - name: Install Dependencies
-        run: | 
-          npm install --save-dev node-qunit-phantomjs
-          npm install --save-dev qunit
+        run: |
+          npm install node-qunit-phantomjs --save-dev
+          npm install qunit --save-dev
+          
       - name: Test
         run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
 
