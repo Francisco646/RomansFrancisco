@@ -168,11 +168,7 @@ function init() {
     } else if (num === 4) {
       return obj[1] + obj[5];
     } else {
-      result = '';
-      for (let i = 0; i < num; i++) {
-        result += obj[1];
-      }
-    return result;
+      return obj[1].repeat(num);
     }
   };
 
