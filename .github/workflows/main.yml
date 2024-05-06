@@ -27,11 +27,10 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: | 
-          npm install --save-dev node-qunit-phantomjs
-          npm install --save-dev qunit
+        run: npm install node-qunit-phantomjs --save-dev
+      - run: npm install qunit --save-dev
       - name: Test
-        run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
+        run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs Francisco646/RomansFrancisco/test.html
 
   deploy:
     environment:
