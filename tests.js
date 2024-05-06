@@ -1,3 +1,4 @@
+// Check correct roman to integer conversions
 test("Correct-RomanToInteger", function(assert) {
   assert.propEqual(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
   assert.propEqual(convertRomanToInteger("MDCL"), {value: 1650, message: '', result: true}, "TC-2: Convert 'MDCL' to 1650");
@@ -5,9 +6,9 @@ test("Correct-RomanToInteger", function(assert) {
   assert.propEqual(convertRomanToInteger("XLV"), {value: 45, message: '', result: true}, "TC-4: Convert 'XLV' to 45");
   assert.propEqual(convertRomanToInteger("MMMDCCXLII"), {value: 3742, message: '', result: true}, "TC-5: Convert 'MMMDCCXLII' to 3742");
   assert.propEqual(convertRomanToInteger("MMCCCI"), {value: 2301, message: '', result: true}, "TC-6: Convert 'MMCCCI' to 2301");
-
 });
 
+// Check incorrect roman to integer conversions
 test("Incorrect-RomanToInteger", function(assert) {
   assert.propEqual(convertRomanToInteger("MMMMXII"), {value: 0, message: 'Please enter a valid roman', result: false}, "TC-7: Convert 'MMMMXII' to 0");
   assert.propEqual(convertRomanToInteger("DDCIII"), {value: 0, message: 'Please enter a valid roman', result: false}, "TC-8: Convert 'DDCIII' to 0");
@@ -17,6 +18,7 @@ test("Incorrect-RomanToInteger", function(assert) {
   assert.propEqual(convertRomanToInteger("-673"), {value: 0, message: 'Please enter a valid roman', result: false}, "TC-12: Convert -673 to 0");
 });
 
+// Check correct integer to roman conversions
 test("Correct-IntegerToRoman", function(assert) {
   assert.propEqual(convertIntegerToRoman(1), {value: 'I', message: '', result: true}, "TC-13: Convert 1 to 'I'");
   assert.propEqual(convertIntegerToRoman(256), {value: 'CCLVI', message: '', result: true}, "TC-14: Convert 256 to 'CCLVI'");
@@ -26,6 +28,7 @@ test("Correct-IntegerToRoman", function(assert) {
   assert.propEqual(convertIntegerToRoman(2301), {value: 'MMCCCI', message: '', result: true}, "TC-18: Convert 2301 to 'MMCCCI'");
 });
 
+// Check incorrect integer to roman conversions
 test("Incorrect-IntegerToRoman", function(assert) {
   assert.propEqual(convertIntegerToRoman("MMI"), {value: 0, message: 'Please enter a valid integer', result: false}, "TC-19: Convert 'MMI' to 0");
   assert.propEqual(convertIntegerToRoman("MMDCCLXXVII"), {value: 0, message: 'Please enter a valid integer', result: false}, "TC-20: Convert 'MMDCCLXXVII' to 0");
