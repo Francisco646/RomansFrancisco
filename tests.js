@@ -17,12 +17,12 @@ QUnit.test("Roman Numeral Converter", function(assert) {
   assert.propEqual(convertRomanToInteger("-673"), {value: 0, message: 'Please enter a valid roman', result: false}, "TC-12: Convert -673 to 0");
 
   // Testing valid integer to roman conversions
-  assert.equal(convertIntegerToRoman(1), {value: 'I', message: '', result: true}, "TC-13: Convert 1 to 'I'");
-  assert.equal(convertIntegerToRoman(256), {value: 'CCLVI', message: '', result: true}, "TC-14: Convert 256 to 'CCLVI'");
-  assert.equal(convertIntegerToRoman(3092), {value: 'MMMXCII', message: '', result: true}, "TC-15: Convert 3092 to 'MMMXCII'");
-  assert.equal(convertIntegerToRoman(3999), {value: 'MMMCMXCIX', message: '', result: true}, "TC-16: Convert 3999 to 'MMMCMXCIX'");
-  assert.equal(convertIntegerToRoman(47), {value: 'XLVII', message: '', result: true}, "TC-17: Convert 47 to 'XLVII'");
-  assert.equal(convertIntegerToRoman(2301), {value: 'MMCCCI', message: '', result: true}, "TC-18: Convert 2301 to 'MMCCCI'");
+  assert.propEqual(convertIntegerToRoman(1), {value: 'I', message: '', result: true}, "TC-13: Convert 1 to 'I'");
+  assert.propEqual(convertIntegerToRoman(256), {value: 'CCLVI', message: '', result: true}, "TC-14: Convert 256 to 'CCLVI'");
+  assert.propEqual(convertIntegerToRoman(3092), {value: 'MMMXCII', message: '', result: true}, "TC-15: Convert 3092 to 'MMMXCII'");
+  assert.propEqual(convertIntegerToRoman(3999), {value: 'MMMCMXCIX', message: '', result: true}, "TC-16: Convert 3999 to 'MMMCMXCIX'");
+  assert.propEqual(convertIntegerToRoman(47), {value: 'XLVII', message: '', result: true}, "TC-17: Convert 47 to 'XLVII'");
+  assert.propEqual(convertIntegerToRoman(2301), {value: 'MMCCCI', message: '', result: true}, "TC-18: Convert 2301 to 'MMCCCI'");
 
   // Testing invalid integer to roman conversions
   assert.propEqual(convertIntegerToRoman("MMI"), {value: 0, message: 'Please enter a valid integer', result: false}, "TC-19: Convert 'MMI' to 0");
