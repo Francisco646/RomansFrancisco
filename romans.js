@@ -209,7 +209,11 @@ function init() {
       if (num === 400) {
         return obj[100] + obj[500];
       } else {
-        return obj[100].repeat(parseInt(num / 100));
+        result = '';
+        for (i = 0; i < parseInt(num / 100); i++) {
+          result += obj[100];
+        }
+  return result;
       }
     } else if (num >= 500 && num < 1000) {
       if (num === 500) {
@@ -219,7 +223,11 @@ function init() {
       if (num === 900) {
         return obj[100] + obj[1000];
       } else {
-        return obj[500] + obj[100].repeat(parseInt(num - 500) / 100);
+        result = obj[500];
+        for (i = 0; i < parseInt((num - 500) / 100); i++) {
+          result += obj[100];
+        }
+  return result;
       }
     } else if (num >= 1000 && num < 5000) {
       if (num === 1000) {
