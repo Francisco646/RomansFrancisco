@@ -1,12 +1,12 @@
 QUnit.test("Roman Numeral Converter", function(assert) {
   
   // Testing valid roman to integer conversions
-  assertEquals(convertRomanToInteger("CCXL"), 240, "TC-1: Convert 'CCXL' to 240");
-  assertEquals(convertRomanToInteger("MDCL"), 1650, "TC-2: Convert 'MDCL' to 1650");
-  assertEquals(convertRomanToInteger("DCCCLXXVIII"), 878, "TC-3: Convert 'DCCCLXXVIII' to 878");
-  assertEquals(convertRomanToInteger("XLV"), 45, "TC-4: Convert 'XLV' to 45");
-  assertEquals(convertRomanToInteger("MMMDCCXLII"), 3742, "TC-5: Convert 'MMMDCCXLII' to 3742");
-  assertEquals(convertRomanToInteger("MMCCCI"), 2301, "TC-6: Convert 'MMCCCI' to 2301");
+  assert.equal(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
+  assert.equal(convertRomanToInteger("MDCL"), {value: 1650, message: '', result: true}, "TC-2: Convert 'MDCL' to 1650");
+  assert.equal(convertRomanToInteger("DCCCLXXVIII"), {value: 878, message: '', result: true}, "TC-3: Convert 'DCCCLXXVIII' to 878");
+  assert.equal(convertRomanToInteger("XLV"), {value: 45, message: '', result: true}, "TC-4: Convert 'XLV' to 45");
+  assert.equal(convertRomanToInteger("MMMDCCXLII"), {value: 3742, message: '', result: true}, "TC-5: Convert 'MMMDCCXLII' to 3742");
+  assert.equal(convertRomanToInteger("MMCCCI"), {value: 2301, message: '', result: true}, "TC-6: Convert 'MMCCCI' to 2301");
 
   // Testing invalid roman to integer conversions
   assert.propEqual(convertRomanToInteger("MMMMXII"), {value: 0, message: 'Please enter a valid roman', result: false}, "TC-7: Convert 'MMMMXII' to 0");
