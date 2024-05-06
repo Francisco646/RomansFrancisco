@@ -1,10 +1,4 @@
-import { convertRomanToInteger } from './romans.js'; // Import the function
-test("Roman Numeral Converter: Convert 'CCXL' to 240", () => {
-  const result = convertRomanToInteger("CCXL");
-  assert.propEqual(result, { value: 240, message: '', result: true });
-});
-
-QUnit.test("Roman Numeral Converter", function(assert) {
+test("Roman Numeral Converter", function(assert) {
   
   // Testing valid roman to integer conversions
   assert.propEqual(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
