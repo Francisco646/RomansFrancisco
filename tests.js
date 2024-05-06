@@ -1,4 +1,4 @@
-test("Roman Numeral Converter", function(assert) {
+QUnit.test("Roman Numeral Converter", function(assert) {
   
   // Testing valid roman to integer conversions
   assert.propEqual(convertRomanToInteger("CCXL"), {value: 240, message: '', result: true}, "TC-1: Convert 'CCXL' to 240");
