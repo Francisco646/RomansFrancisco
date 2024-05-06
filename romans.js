@@ -168,7 +168,7 @@ function init() {
     } else if (num === 4) {
       return obj[1] + obj[5];
     } else {
-      return obj[1].repeat(num);
+      return (obj[1]).repeat(num);
     }
   };
 
