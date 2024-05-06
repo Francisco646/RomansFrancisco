@@ -30,6 +30,11 @@ jobs:
         run: |
           npm install node-qunit-phantomjs --save-dev
           npm install qunit --save-dev
+          npm uninstall -g esm
+          npm uninstall -g qunit
+          npm install esm
+          npm install qunit
+          npx qunit --require esm test.js
       - name: Test
         run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
 
