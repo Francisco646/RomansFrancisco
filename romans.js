@@ -46,7 +46,7 @@ function init() {
   // and an error message if needed
   function convertRomanToInteger(roman) {
 
-    let response = {
+    response = {
       value: 0, 
       message: '',
       result: false 
@@ -67,9 +67,9 @@ function init() {
       return response;
     }
 
-    let arr = ["I", "V", "X", "L", "C", "D", "M"];
+    arr = ["I", "V", "X", "L", "C", "D", "M"];
 
-    let values = {
+    values = {
       I: 1,
       V: 5,
       X: 10,
@@ -79,9 +79,9 @@ function init() {
       M: 1000,
     };
 
-    let sum = 0;
+    sum = 0;
 
-    let prevIndex = 0;
+    prevIndex = 0;
 
     for (let i = roman.length - 1; i >= 0; i--) {
       if (arr.indexOf(roman[i]) >= prevIndex) {
@@ -104,9 +104,9 @@ function init() {
   // On top of that, they return a JSON object instead of updating the
   // UI directly. The JSON object contains the result (ok/nok), the value
   // and an error message if needed
-  const convertIntegerToRoman = (num) => {
+  function convertIntegerToRoman(num) {
 
-    let response = {
+    response = {
       value: 0,
       message: '', 
       result: false 
@@ -139,8 +139,8 @@ function init() {
       1000: "M",
     };
 
-    let count = 1;
-    let str = "";
+    count = 1;
+    str = "";
     while (num > 0) {
       let last = parseInt(num % 10);
       last *= count;
@@ -160,7 +160,7 @@ function init() {
     return response;
   };
 
-  const lessThan9 = (num, obj) => {
+  function lessThan9(num, obj) {
     if (num === 9) {
       return obj[1] + obj[10];
     } else if (num >= 5 && num < 9) {
@@ -172,7 +172,7 @@ function init() {
     }
   };
 
-  const greaterThan9 = (num, obj) => {
+  function greaterThan9(num, obj) {
     if (num >= 10 && num < 50) {
       if (num === 10) {
         return obj[10];
