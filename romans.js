@@ -13,7 +13,7 @@ function init() {
   var inputArea = document.querySelector("input[type='text']");
 
 
-  modeCheckbox.addEventListener("change", (e) => {
+  modeCheckbox.addEventListener("change", function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
   });
 
