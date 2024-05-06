@@ -99,6 +99,8 @@ function init() {
     return response;
   };
 
+  module.exports = convertRomanToInteger;
+
   // Now the convertion methods receive both an input argument instead
   // of reading directly from the UI.
   // On top of that, they return a JSON object instead of updating the
