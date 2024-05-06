@@ -10,13 +10,26 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    // Custom rule: valid-roman-numeral-pattern
-    'valid-roman-numeral-pattern': ['error', { allow: ['I', 'V', 'X', 'L', 'C', 'D', 'M'] }],
-    
-    // Custom rule: valid-integer-input
-    'valid-integer-input': 'error',
-    
-    // Custom rule: valid-integer-range
-    'valid-integer-range': ['error', { min: 1, max: 3999 }],
+    "no-cond-assign": [
+            "error",
+            "always"
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-unused-vars": "off",
+        "semi": [
+            "error",
+            "always"
+        ]
   },
 };
