@@ -1,26 +1,46 @@
-name: Deploy Roman Converter to GitHub Pages
+name: Test Roman Converter
 
 on:
-  # Triggers the workflow on push events to the main branch and manual trigger
   push:
     branches: ["main"]
   workflow_dispatch:
-
+  
 permissions:
   contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: | 
+          npm install --save-dev node-qunit-phantomjs
+          npm install --save-dev qunit
+      - name: Test
+        run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      
     runs-on: ubuntu-latest
+    needs: test
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -36,3 +56,4 @@ jobs:
       - name: Deploy Content
         id: deployment
         uses: actions/deploy-pages@v1
+    
