@@ -24,11 +24,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: 14
 
       - name: Install Dependencies
-        run: npm install node-qunit-phantomjs --save-dev
-      - run: npm install qunit --save-dev
+        run: |
+          npm install node-qunit-phantomjs --save-dev
+          npm install qunit --save-dev
       - name: Test
         run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
 
