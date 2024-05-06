@@ -12,7 +12,14 @@ function init() {
   var outputArea = document.querySelector(".convert-output");
   var inputArea = document.querySelector("input[type='text']");
 
-
+  function assertEquals(actual, expected, message) {
+    if (actual === expected) {
+        console.log(message + ": Passed");
+    } else {
+        console.error(message + ": Failed. Expected " + expected + ", but got " + actual);
+    }
+  }
+  
   modeCheckbox.addEventListener("change", function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
   });
