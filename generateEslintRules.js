@@ -1,15 +1,16 @@
 const fs = require('fs');
 
-// Load the ESLint configuration file
-const eslintConfig = require('./eslintrc.js');
-
-// Extract custom rules from the ESLint configuration
-const { rules } = eslintConfig;
+// Custom ESLint rules
+const customRules = {
+  'valid-roman-numeral-pattern': ['error', { allow: ['I', 'V', 'X', 'L', 'C', 'D', 'M'] }],
+  'valid-integer-input': 'error',
+  'valid-integer-range': ['error', { min: 1, max: 3999 }],
+};
 
 // Create a JavaScript file with the custom ESLint rules
 const customRulesFileContent = `
 module.exports = {
-  rules: ${JSON.stringify(rules, null, 2)},
+  rules: ${JSON.stringify(customRules, null, 2)},
 };
 `;
 
