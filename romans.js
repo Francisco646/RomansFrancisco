@@ -142,7 +142,7 @@ function init() {
     count = 1;
     str = "";
     while (num > 0) {
-      let last = parseInt(num % 10);
+      last = parseInt(num % 10);
       last *= count;
       if (last < 10) {
         str += lessThan9(last, mapping);
