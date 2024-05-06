@@ -220,7 +220,7 @@ function init() {
         for (i = 0; i < parseInt(num / 100); i++) {
           result += obj[100];
         }
-  return result;
+        return result;
       }
     } else if (num >= 500 && num < 1000) {
       if (num === 500) {
@@ -234,7 +234,7 @@ function init() {
         for (i = 0; i < parseInt((num - 500) / 100); i++) {
           result += obj[100];
         }
-  return result;
+        return result;
       }
     } else if (num >= 1000 && num < 5000) {
       if (num === 1000) {
@@ -246,6 +246,6 @@ function init() {
         result += obj[1000];
       }
       return result;
-}
+      }
     }
   };
