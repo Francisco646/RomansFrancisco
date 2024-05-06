@@ -1,4 +1,4 @@
-const convertRomanToInteger = require('./romans.js');
+import { convertRomanToInteger } from './romans.js';
 
 QUnit.test("Roman Numeral Converter", function(assert) {
   
