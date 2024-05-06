@@ -2,14 +2,12 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true,
   },
   extends: [
-    'eslint:recommended',
+    'eslint:recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     // Custom rule: valid-roman-numeral-pattern
