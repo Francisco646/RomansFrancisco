@@ -227,46 +227,40 @@ const greaterThan9 = function(num, obj) {
   }
 };
 
+/**
+ * Returns a new string containing the specified number of copies of the string on which it was called.
+ * 
+ * @param count The number of times to repeat the string. Must be a non-negative integer less than Infinity.
+ * @return A new string containing the repeated copies of the original string, or an empty string if either the original string or the count is empty or zero.
+ * @throws TypeError If the original string is null or undefined.
+ * @throws RangeError If the count is negative, NaN, or equal to Infinity, or if the result would exceed the maximum string size limit.
+ */
+
 if (!String.prototype.repeat) {
   String.prototype.repeat = function(count) {
     'use strict';
-    if (this == null) {
-      throw new TypeError('can\'t convert ' + this + ' to object');
-    }
+    if (this == null)  throw new TypeError('can\'t convert ' + this + ' to object appropriately');
+    
     var str = '' + this;
     count = +count;
-    if (count != count) {
-      count = 0;
-    }
-    if (count < 0) {
-      throw new RangeError('repeat count must be non-negative');
-    }
-    if (count == Infinity) {
-      throw new RangeError('repeat count must be less than infinity');
-    }
+    
+    if (count != count) count = 0;
+    if (count < 0) throw new RangeError('repeat count should have a non-negative value');
+    if (count == Infinity) throw new RangeError('repeat count should be lower than infinite value');
+    
     count = Math.floor(count);
-    if (str.length == 0 || count == 0) {
-      return '';
-    }
-    // Ensuring count is a 31-bit integer allows us to heavily optimize the
-    // main part. But anyway, most current (August 2014) browsers can't handle
-    // strings 1 << 28 chars or longer, so:
-    if (str.length * count >= 1 << 28) {
-      throw new RangeError('repeat count must not overflow maximum string size');
-    }
+    if (str.length == 0 || count == 0) return '';
+    if (str.length * count >= 1 << 28) throw new RangeError('repeat count shouldn't overflow max str size');
+    
     var rpt = '';
     for (;;) {
-      if ((count & 1) == 1) {
-        rpt += str;
-      }
+      if ((count & 1) == 1) rpt += str;
       count >>>= 1;
-      if (count == 0) {
-        break;
-      }
+      if (count == 0) break;
+    }
       str += str;
     }
-    // Could we try:
-    // return Array(count + 1).join(this);
+
     return rpt;
   };
 }
