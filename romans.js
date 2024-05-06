@@ -164,11 +164,15 @@ function init() {
     if (num === 9) {
         return obj[1] + obj[10];
     } else if (num >= 5 && num < 9) {
-        return obj[5] + new Array(num % 5 + 1).fill(obj[1]).join('');
+        return obj[5] + obj[1].repeat(num - 5);
     } else if (num === 4) {
         return obj[1] + obj[5];
     } else {
-        return new Array(num + 1).fill(obj[1]).join('');
+        result = '';
+        for (i = 0; i < num; i++) {
+            result += obj[1];
+        }
+        return result;
     }
 }
 
