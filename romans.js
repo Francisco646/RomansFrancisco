@@ -83,7 +83,7 @@ function init() {
 
     prevIndex = 0;
 
-    for (let i = roman.length - 1; i >= 0; i--) {
+    for (i = roman.length - 1; i >= 0; i--) {
       if (arr.indexOf(roman[i]) >= prevIndex) {
         sum = sum + values[roman[i]];
       } else {
