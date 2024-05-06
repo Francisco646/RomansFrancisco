@@ -12,13 +12,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // Rule to check for valid Roman numeral pattern
+    // Custom rule: valid-roman-numeral-pattern
     'valid-roman-numeral-pattern': ['error', { allow: ['I', 'V', 'X', 'L', 'C', 'D', 'M'] }],
-
-    // Rule to ensure input values for integer conversion are integers
+    
+    // Custom rule: valid-integer-input
     'valid-integer-input': 'error',
-
-    // Rule to check for valid integer range
+    
+    // Custom rule: valid-integer-range
     'valid-integer-range': ['error', { min: 1, max: 3999 }],
   },
 };
