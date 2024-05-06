@@ -1,0 +1,77 @@
+name: Test Roman Converter
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Install Dependencies
+        run: npm i eslint@5.16.0
+
+      - name: Lint
+        run: node_modules/eslint/bin/eslint.js romans.js
+  
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Install Dependencies
+        run: |
+          npm install node-qunit-phantomjs --save-dev
+          npm install qunit --save-dev
+          
+      - name: Test
+        run: node_modules/node-qunit-phantomjs/bin/node-qunit-phantomjs test.html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload Content
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'  # Uploads entire repository to GitHub Pages
+
+      - name: Deploy Content
+        id: deployment
+        uses: actions/deploy-pages@v1
+    
