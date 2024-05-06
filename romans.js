@@ -27,7 +27,7 @@ function init() {
   // 2 - Write the UI output (outputArea.innerHTML)
   // 3 - Show error messages
   // This is cleaner and also removes code duplications
-  convertButton.addEventListener("click", () => {
+  convertButton.addEventListener("click", function() {
     let inputValue = inputArea.value;
     let convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
     if (convertion.result) {
