@@ -17,9 +17,9 @@ function init() {
     header.innerHTML = getModeTitle(e.target.checked);
   });
 
-  const getModeTitle = (integerToRoman) => {
+  function getModeTitle(integerToRoman) {
     return integerToRoman ? "Integer To Roman" : "Roman To Integer";
-  };
+  }
 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
