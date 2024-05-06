@@ -95,10 +95,7 @@ const convertRomanToInteger = function(roman) {
 
   response.value = sum;
   response.result = true;
-  // eslint-disable-next-line no-undef
-  gtag('event', 'getRomanToInteger', {
-    'RomanToInteger': response
-  });
+
   return response;
 };
 
@@ -159,10 +156,7 @@ const convertIntegerToRoman = function(num) {
 
   response.value = str;
   response.result = true;
-  // eslint-disable-next-line no-undef
-  gtag('event', 'getIntegerToRoman', {
-    'IntegerToRoman': response
-  });
+
   return response;
 };
 
@@ -226,15 +220,6 @@ const greaterThan9 = function(num, obj) {
     return obj[1000].repeat(parseInt(num / 1000));
   }
 };
-
-/**
- * Returns a new string containing the specified number of copies of the string on which it was called.
- * 
- * @param count The number of times to repeat the string. Must be a non-negative integer less than Infinity.
- * @return A new string containing the repeated copies of the original string, or an empty string if either the original string or the count is empty or zero.
- * @throws TypeError If the original string is null or undefined.
- * @throws RangeError If the count is negative, NaN, or equal to Infinity, or if the result would exceed the maximum string size limit.
- */
 
 if (!String.prototype.repeat) {
   String.prototype.repeat = function(count) {
