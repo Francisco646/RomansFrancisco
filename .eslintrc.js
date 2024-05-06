@@ -19,8 +19,6 @@ module.exports = {
     "no-extra-semi": "error",
     "no-mixed-spaces-and-tabs": "error",
     "no-undef": "error",
-    "no-unreachable": "error",
-    "no-use-before-define": "error",
-    "comma-dangle": ["error", "always-multiline"]
+    "no-unreachable": "error"
   },
 };
