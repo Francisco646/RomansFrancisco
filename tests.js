@@ -1,3 +1,5 @@
+const convertRomanToInteger = require('./romanConverter.js');
+
 QUnit.test("Roman Numeral Converter", function(assert) {
   
   // Testing valid roman to integer conversions
